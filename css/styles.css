@@ -1,0 +1,131 @@
+body{
+background:#e5e5e5;
+font-family:Arial;
+}
+
+/* PHONE CARD */
+.phone{
+max-width:420px;
+margin:auto;
+background:#3b3b3b;
+border-radius:20px;
+padding:20px;
+color:white;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* PROFILE */
+.profile-card{
+border:2px solid #caa23c;
+padding:20px;
+border-radius:12px;
+text-align:center;
+margin-bottom:15px;
+}
+
+.profile-card img{
+width:70px;
+height:70px;
+border-radius:50%;
+margin-bottom:8px;
+}
+
+/* STATS */
+.stat-card{
+display:flex;
+gap:10px;
+align-items:center;
+padding:12px;
+border-radius:12px;
+font-weight:bold;
+}
+
+.stat-card img{
+width:30px;
+height:30px;
+border-radius:50%;
+}
+
+.stat-card small{
+display:block;
+font-size:12px;
+}
+
+.stat-card h4{
+margin:0;
+}
+
+.stat1{background:#e7c5c5;color:black;}
+.stat2{background:#cfe0a5;color:black;}
+.stat3{background:#ead5a9;color:black;}
+.stat4{background:#e6bcbc;color:black;}
+
+/* INFO BOX */
+.info-box{
+background:#444;
+padding:15px;
+border-radius:10px;
+margin-top:20px;
+}
+
+.info-title{
+color:#ffc107;
+font-weight:bold;
+}
+
+/* MEMBERSHIP */
+.membership{
+margin-top:15px;
+border-radius:10px;
+overflow:hidden;
+}
+
+.member-header{
+padding:14px;
+font-weight:bold;
+cursor:pointer;
+letter-spacing:1px;
+}
+
+.foundation{background:#d4a017;}
+.economy{background:#73859c;}
+
+.member-body{
+display:none;
+background:#444;
+padding:15px;
+font-size:14px;
+}
+
+/* FOOTER */
+.footer-bar{
+background:#444;
+color:white;
+padding:10px;
+border-radius:10px;
+font-size:13px;
+text-align:center;
+margin-top:15px;
+}
+
+/* FLOATING WHATSAPP */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  z-index: 1000;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.whatsapp-float img {
+  width: 35px;
+  height: 35px;
+}
