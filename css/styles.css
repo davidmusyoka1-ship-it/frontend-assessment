@@ -1,60 +1,122 @@
 body{
-background:#e5e5e5;
-font-family:Arial;
+  background:#e5e5e5;
+  font-family:Arial;
+  margin:0;
+}
+
+/* HEADER TITLE */
+.header-title{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  padding:12px 20px;
+  background:#3b3b3b;
+  z-index:1002;
+  font-size:22px;
+}
+
+/* SIDEBAR BUTTON */
+.sidebar-btn{
+  position:fixed;
+  top:50px; /* below header */
+  right:20px;
+  background:#444;
+  font-size:24px;
+  border:none;
+  color:white;
+  padding:6px 12px;
+  cursor:pointer;
+  border-radius:6px;
+  z-index:1003;
+}
+
+/* SIDEBAR */
+.sidebar{
+  position:fixed;
+  top:50px; /* below header */
+  left:-300px;
+  width:300px;
+  height:calc(100% - 50px);
+  background:#000;
+  padding:30px 20px;
+  transition:0.3s;
+  z-index:1001;
+}
+
+.showSidebar{
+  left:0;
+}
+
+.showSidebarPush{
+  left:0;
+}
+
+/* Sidebar links */
+.sidebar .nav-link{
+  color:white;
+  padding:10px 0;
+  font-size:18px;
+}
+
+/* Desktop/tablet sidebar button on left */
+@media (min-width:768px){
+  .sidebar-btn{
+    left:0;
+    right:auto;
+    top:50px;
+    border-radius:0 6px 6px 0;
+  }
 }
 
 /* PHONE CARD */
 .phone{
-max-width:420px;
-margin:auto;
-background:#3b3b3b;
-border-radius:20px;
-padding:20px;
-color:white;
-box-shadow:0 10px 20px rgba(0,0,0,0.2);
+  max-width:420px;
+  margin:auto;
+  background:#3b3b3b;
+  border-radius:20px;
+  padding:20px;
+  color:white;
+  box-shadow:0 10px 20px rgba(0,0,0,0.2);
+  margin-top:80px; /* below header */
 }
 
 /* PROFILE */
 .profile-card{
-border:2px solid #caa23c;
-padding:20px;
-border-radius:12px;
-text-align:center;
-margin-bottom:15px;
+  border:2px solid #caa23c;
+  padding:20px;
+  border-radius:12px;
+  text-align:center;
+  margin-bottom:15px;
 }
-
 .profile-card img{
-width:70px;
-height:70px;
-border-radius:50%;
-margin-bottom:8px;
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  margin-bottom:8px;
 }
 
 /* STATS */
 .stat-card{
-display:flex;
-gap:10px;
-align-items:center;
-padding:12px;
-border-radius:12px;
-font-weight:bold;
+  display:flex;
+  gap:10px;
+  align-items:center;
+  padding:12px;
+  border-radius:12px;
+  font-weight:bold;
 }
-
 .stat-card img{
-width:30px;
-height:30px;
-border-radius:50%;
+  width:30px;
+  height:30px;
+  border-radius:50%;
 }
-
 .stat-card small{
-display:block;
-font-size:12px;
+  display:block;
+  font-size:12px;
 }
-
 .stat-card h4{
-margin:0;
+  margin:0;
 }
-
 .stat1{background:#e7c5c5;color:black;}
 .stat2{background:#cfe0a5;color:black;}
 .stat3{background:#ead5a9;color:black;}
@@ -62,70 +124,65 @@ margin:0;
 
 /* INFO BOX */
 .info-box{
-background:#444;
-padding:15px;
-border-radius:10px;
-margin-top:20px;
+  background:#444;
+  padding:15px;
+  border-radius:10px;
+  margin-top:20px;
 }
-
 .info-title{
-color:#ffc107;
-font-weight:bold;
+  color:#ffc107;
+  font-weight:bold;
 }
 
 /* MEMBERSHIP */
 .membership{
-margin-top:15px;
-border-radius:10px;
-overflow:hidden;
+  margin-top:15px;
+  border-radius:10px;
+  overflow:hidden;
 }
-
 .member-header{
-padding:14px;
-font-weight:bold;
-cursor:pointer;
-letter-spacing:1px;
+  padding:14px;
+  font-weight:bold;
+  cursor:pointer;
+  letter-spacing:1px;
 }
-
 .foundation{background:#d4a017;}
 .economy{background:#73859c;}
-
 .member-body{
-display:none;
-background:#444;
-padding:15px;
-font-size:14px;
+  display:none;
+  background:#444;
+  padding:15px;
+  font-size:14px;
 }
 
-/* FOOTER */
-.footer-bar{
-background:#444;
-color:white;
-padding:10px;
-border-radius:10px;
-font-size:13px;
-text-align:center;
-margin-top:15px;
+/* WHATSAPP FLOAT */
+.whatsapp-float{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:60px;
+  height:60px;
+  z-index:1000;
+  cursor:pointer;
+  border-radius:50%;
+  background-color:#25d366;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 4px 8px rgba(0,0,0,0.3);
+}
+.whatsapp-float img{
+  width:35px;
+  height:35px;
 }
 
-/* FLOATING WHATSAPP */
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  z-index: 1000;
-  cursor: pointer;
-  border-radius: 50%;
-  background-color: #25d366;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+/* Responsive phone/tablet/desktop adjustments */
+@media (min-width:768px){
+  .phone{max-width:700px;}
+  .stat-card{padding:16px;font-size:15px;}
 }
-
-.whatsapp-float img {
-  width: 35px;
-  height: 35px;
+@media (min-width:1024px){
+  .phone{max-width:900px;}
+  .profile-card img{width:90px;height:90px;}
+  .stat-card{padding:18px;font-size:16px;}
 }
