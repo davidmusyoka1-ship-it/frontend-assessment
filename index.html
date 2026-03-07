@@ -1,125 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>git status
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Investment Club</title>
 
-<link rel="stylesheet" href="css/styles.css">
+<!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body>
+<body class="theme-professional">
 
 <!-- HEADER -->
-<h4 class="header-title text-white">Investment Club</h4>
-
-<!-- SIDEBAR BUTTON -->
-<button class="sidebar-btn" onclick="toggleSidebar()">☰</button>
+<header class="header d-flex align-items-center justify-content-between px-3 py-2">
+  <h4 class="header-title text-white m-0">Investment Club</h4>
+  <div class="d-flex align-items-center gap-2">
+    <select id="themeSelector" class="form-select form-select-sm">
+      <option value="theme-professional">Professional</option>
+      <option value="theme-gritty">Gritty</option>
+      <option value="theme-thin">Thin</option>
+    </select>
+    <button class="sidebar-btn btn btn-dark" onclick="toggleSidebar()">☰</button>
+  </div>
+</header>
 
 <!-- SIDEBAR -->
-<nav id="sidebar" class="sidebar">
+<nav id="sidebar" class="sidebar bg-dark text-white">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <span class="fw-bold">Menu</span>
+    <button class="btn btn-link text-white p-0" onclick="toggleSidebar()" style="font-size:1.5rem;">&times;</button>
+  </div>
   <ul class="nav flex-column">
-    <li class="nav-item"><a class="nav-link text-white">Home</a></li>
-    <li class="nav-item"><a class="nav-link text-white">Membership</a></li>
-    <li class="nav-item"><a class="nav-link text-white">Contact</a></li>
+    <li class="nav-item"><a class="nav-link text-white" href="#home">Home</a></li>
+    <li class="nav-item"><a class="nav-link text-white" href="#memberships">Membership</a></li>
+    <li class="nav-item"><a class="nav-link text-white" href="#progress">My Progress</a></li>
+    <li class="nav-item"><a class="nav-link text-white" href="#events">Events</a></li>
+    <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
   </ul>
 </nav>
 
-<!-- MAIN CONTENT -->
-<div id="mainContent" class="container mt-5">
+<!-- OVERLAY -->
+<div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
 
-  <div class="phone">
+<!-- MAIN CONTENT - 3 COLUMN LAYOUT -->
+<main id="mainContent" class="container-fluid mt-4 px-4">
 
-    <!-- PROFILE -->
-    <div class="profile-card text-center">
-      <img src="https://i.pravatar.cc/100">
-      <h5>Michael</h5>
-      <p>You’ve officially joined your first investment knowledge club!</p>
-    </div>
-
-    <!-- STATS -->
-    <div class="row g-2">
-      <div class="col-6">
-        <div class="stat-card stat1">
-          <img src="https://i.pravatar.cc/40?img=1">
-          <div><small>Benard Makodingo</small><h4>350</h4></div>
+  <div class="row g-4">
+    
+    <!-- LEFT SIDEBAR -->
+    <aside class="col-lg-3 col-md-12">
+      
+      <!-- Progress Tracker -->
+      <div class="card-glass fade-in mb-4" id="progress">
+        <h6 class="sidebar-title">
+          <span class="sidebar-icon">📊</span> Progress Tracker
+        </h6>
+        <div class="progress-item">
+          <div class="d-flex justify-content-between mb-1">
+            <small>Learning Goals</small>
+            <small>2/5</small>
+          </div>
+          <div class="progress-bar-custom">
+            <div class="progress-fill" style="width: 40%"></div>
+          </div>
+        </div>
+        <div class="progress-item mt-3">
+          <div class="d-flex justify-content-between mb-1">
+            <small>Profile Completion</small>
+            <small>85%</small>
+          </div>
+          <div class="progress-bar-custom">
+            <div class="progress-fill" style="width: 85%"></div>
+          </div>
+        </div>
+        <div class="progress-item mt-3">
+          <div class="d-flex justify-content-between mb-1">
+            <small>Engagement Score</small>
+            <small>72%</small>
+          </div>
+          <div class="progress-bar-custom">
+            <div class="progress-fill" style="width: 72%"></div>
+          </div>
         </div>
       </div>
-      <div class="col-6">
-        <div class="stat-card stat2">
-          <img src="https://i.pravatar.cc/40?img=2">
-          <div><small>KigSmall Foot</small><h4>225</h4></div>
+
+      <!-- Quick Stats -->
+      <div class="card-glass fade-in mb-4">
+        <h6 class="sidebar-title">
+          <span class="sidebar-icon">📈</span> Quick Stats
+        </h6>
+        <div class="row g-2">
+          <div class="col-6">
+            <div class="stat-box stat-blue">
+              <div class="stat-number">247</div>
+              <div class="stat-label">Your Score</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="stat-box stat-green">
+              <div class="stat-number">#12</div>
+              <div class="stat-label">Rank</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="stat-box stat-purple">
+              <div class="stat-number">7</div>
+              <div class="stat-label">Day Streak</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="stat-box stat-orange">
+              <div class="stat-number">5</div>
+              <div class="stat-label">Badges</div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col-6">
-        <div class="stat-card stat3">
-          <img src="https://i.pravatar.cc/40?img=3">
-          <div><small>Caroline Likhol</small><h4>117</h4></div>
+
+      <!-- Learning Goals -->
+      <div class="card-glass fade-in">
+        <h6 class="sidebar-title">
+          <span class="sidebar-icon">🎯</span> Learning Goals
+        </h6>
+        <ul class="goals-list">
+          <li class="goal-item completed">
+            <span class="goal-check">✓</span>
+            <span class="goal-text">Complete Investment Basics</span>
+          </li>
+          <li class="goal-item completed">
+            <span class="goal-check">✓</span>
+            <span class="goal-text">Take Risk Assessment Quiz</span>
+          </li>
+          <li class="goal-item">
+            <span class="goal-check">○</span>
+            <span class="goal-text">Review Market Fundamentals</span>
+          </li>
+          <li class="goal-item">
+            <span class="goal-check">○</span>
+            <span class="goal-text">Join a Discussion Group</span>
+          </li>
+          <li class="goal-item">
+            <span class="goal-check">○</span>
+            <span class="goal-text">Create Your First Portfolio</span>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- CENTER CONTENT -->
+    <div class="col-lg-6 col-md-12">
+      <div class="phone">
+        
+        <!-- PROFILE -->
+        <div class="profile-card card-glass text-center fade-in">
+          <img src="https://i.pravatar.cc/100" alt="Profile">
+          <h5>Michael</h5>
+          <p>You've officially joined your first investment knowledge club!</p>
+        </div>
+
+        <!-- STATS -->
+        <div class="row g-2 mt-3">
+          <div class="col-6 col-md-3">
+            <div class="stat-card stat1 card-glass fade-in">
+              <span class="top-badge">Top Performer</span>
+              <img src="https://i.pravatar.cc/40?img=1">
+              <div><small>Benard Makodingo</small><h4 class="counter" data-target="350">0</h4></div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="stat-card stat2 card-glass fade-in">
+              <img src="https://i.pravatar.cc/40?img=2">
+              <div><small>KigSmall Foot</small><h4 class="counter" data-target="225">0</h4></div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="stat-card stat3 card-glass fade-in">
+              <img src="https://i.pravatar.cc/40?img=3">
+              <div><small>Caroline Likhol</small><h4 class="counter" data-target="117">0</h4></div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="stat-card stat4 card-glass fade-in">
+              <img src="https://i.pravatar.cc/40?img=4">
+              <div><small>Chikwe Likhol</small><h4 class="counter" data-target="321">0</h4></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- INFO BOX -->
+        <div class="info-box card-glass mt-4 fade-in">
+          <h6 class="info-title">Now let's make you great!</h6>
+          <p>You have shown us where you are doing well and where we can support you to be great.
+          From your profile we recommend these memberships. Pick one that fits you best and start your financial adventure.</p>
+        </div>
+
+        <!-- MEMBERSHIPS -->
+        <div id="memberships" class="mt-4">
+          <div class="membership card-glass foundation fade-in">
+            <div class="member-header" onclick="toggleMembership('foundation')">
+              <span>FOUNDATION MEMBERSHIP</span>
+              <span class="toggle-icon">+</span>
+            </div>
+            <div id="foundation" class="member-body">
+              <p>We invest for you in shares and in the Mansa-X global fund.  
+              Service is free online with your personal representative, but service in the office may have extra charges.</p>
+              <p>The Foundation Membership is ideal for beginners who want to start learning about investing while still receiving guidance and support.</p>
+            </div>
+          </div>
+
+          <div class="membership card-glass economy fade-in mt-3">
+            <div class="member-header" onclick="toggleMembership('economy')">
+              <span>ECONOMY MEMBERSHIP</span>
+              <span class="toggle-icon">+</span>
+            </div>
+            <div id="economy" class="member-body">
+              <p>We will invest your money for you at a guaranteed rate with the Mansa-X global fund.
+              Service is free online with your personal representative, but office service may include additional charges.</p>
+              <p>This membership is recommended for users who prefer a stable investment option while still growing their financial knowledge.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- MEMBERSHIP DETAILS BUTTON -->
+        <div class="text-center mt-3 mb-4 fade-in">
+          <button class="btn btn-warning btn-lg px-5" data-bs-toggle="modal" data-bs-target="#contactModal">Membership Details</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT SIDEBAR -->
+    <aside class="col-lg-3 col-md-12">
+      
+      <!-- Activity Feed -->
+      <div class="card-glass fade-in mb-4">
+        <h6 class="sidebar-title">
+          <span class="sidebar-icon">⚡</span> Recent Activity
+        </h6>
+        <div class="activity-feed">
+          <div class="activity-item">
+            <img src="https://i.pravatar.cc/30?img=5" alt="User">
+            <div class="activity-content">
+              <p><strong>Michael</strong> completed Investment Basics</p>
+              <span class="activity-time">2 min ago</span>
+            </div>
+          </div>
+          <div class="activity-item">
+            <img src="https://i.pravatar.cc/30?img=6" alt="User">
+            <div class="activity-content">
+              <p><strong>Sarah</strong> joined Foundation Membership</p>
+              <span class="activity-time">15 min ago</span>
+            </div>
+          </div>
+          <div class="activity-item">
+            <img src="https://i.pravatar.cc/30?img=7" alt="User">
+            <div class="activity-content">
+              <p><strong>James</strong> earned a new badge</p>
+              <span class="activity-time">1 hour ago</span>
+            </div>
+          </div>
+          <div class="activity-item">
+            <img src="https://i.pravatar.cc/30?img=8" alt="User">
+            <div class="activity-content">
+              <p><strong>Emma</strong> completed Risk Assessment</p>
+              <span class="activity-time">2 hours ago</span>
+            </div>
+          </div>
+          <div class="activity-item">
+            <img src="https://i.pravatar.cc/30?img=9" alt="User">
+            <div class="activity-content">
+              <p><strong>David</strong> reached 500 points</p>
+              <span class="activity-time">3 hours ago</span>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col-6">
-        <div class="stat-card stat4">
-          <img src="https://i.pravatar.cc/40?img=4">
-          <div><small>Chikwe Likhol</small><h4>321</h4></div>
+
+      <!-- Upcoming Events -->
+      <div class="card-glass fade-in mb-4" id="events">
+        <h6 class="sidebar-title">
+          <span class="sidebar-icon">📅</span> Upcoming Events
+        </h6>
+        <div class="events-list">
+          <div class="event-item">
+            <span class="event-badge webinar">WEBINAR</span>
+            <h6 class="event-title">Introduction to Stock Markets</h6>
+            <p class="event-date">Tomorrow • 10:00 AM</p>
+          </div>
+          <div class="event-item">
+            <span class="event-badge workshop">WORKSHOP</span>
+            <h6 class="event-title">Portfolio Diversification</h6>
+            <p class="event-date">Dec 15 • 2:00 PM</p>
+          </div>
+          <div class="event-item">
+            <span class="event-badge qa">Q&A</span>
+            <h6 class="event-title">Live Q&A with Experts</h6>
+            <p class="event-date">Dec 18 • 6:00 PM</p>
+          </div>
+        </div>
+        <button class="btn btn-outline-light btn-sm w-100 mt-3">View All Events</button>
+      </div>
+
+      <!-- Daily Tip -->
+      <div class="card-glass fade-in mb-4 daily-tip-card">
+        <h6 class="sidebar-title">
+          <span class="sidebar-icon">💡</span> Daily Tip
+        </h6>
+        <p class="daily-tip-text" id="dailyTip">
+          "Diversification is key to managing risk in your investment portfolio."
+        </p>
+        <small class="tip-footer">New tip every day</small>
+      </div>
+
+      <!-- Community Stats -->
+      <div class="card-glass fade-in">
+        <h6 class="sidebar-title">
+          <span class="sidebar-icon">👥</span> Community
+        </h6>
+        <div class="community-stats">
+          <div class="community-number">2,847</div>
+          <div class="community-label">members learning today</div>
+        </div>
+        <div class="row mt-3 text-center">
+          <div class="col-6">
+            <div class="community-stat-number">+124</div>
+            <div class="community-stat-label">joined today</div>
+          </div>
+          <div class="col-6">
+            <div class="community-stat-number">89%</div>
+            <div class="community-stat-label">active rate</div>
+          </div>
         </div>
       </div>
-    </div>
-
-    <!-- INFO BOX -->
-    <div class="info-box">
-      <h6 class="info-title">Now let's make you great!</h6>
-      <p>You have shown us where you are doing well and where we can support you to be great.
-        From your profile we recommend these memberships. Pick one that fits you best and start your financial adventure.</p>
-    </div>
-
-    <!-- MEMBERSHIPS -->
-    <div class="membership">
-      <div class="member-header foundation" onclick="toggleMembership('foundation')">FOUNDATION MEMBERSHIP</div>
-      <div id="foundation" class="member-body">
-        <p>We invest for you in shares and in the Mansa-X global fund.  
-          Service is free online with your personal representative, but service in the office may have extra charges.</p>
-        <p>The Foundation Membership is ideal for beginners who want to start learning about investing while still receiving guidance and support.</p>
-      </div>
-    </div>
-
-    <div class="membership">
-      <div class="member-header economy" onclick="toggleMembership('economy')">ECONOMY MEMBERSHIP</div>
-      <div id="economy" class="member-body">
-        <p>We will invest your money for you at a guaranteed rate with the Mansa-X global fund.
-          Service is free online with your personal representative, but office service may include additional charges.</p>
-        <p>This membership is recommended for users who prefer a stable investment option while still growing their financial knowledge.</p>
-      </div>
-    </div>
-
-    <!-- MEMBERSHIP DETAILS BUTTON -->
-    <div class="text-center mt-3">
-      <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#contactModal">Membership Details</button>
-    </div>
-
-    <!-- VIEW SWITCH BUTTONS -->
-    <div class="text-center mt-3">
-      <button class="btn btn-dark btn-sm" onclick="setView('desktop')">Desktop View</button>
-      <button class="btn btn-secondary btn-sm" onclick="setView('tablet')">Tablet View</button>
-      <button class="btn btn-warning btn-sm" onclick="setView('phone')">Phone View</button>
-    </div>
+    </aside>
 
   </div>
-</div>
+
+</main>
 
 <!-- MODAL -->
 <div class="modal fade" id="contactModal">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-content modal-dark">
       <div class="modal-header">
-        <h5 class="modal-title">Contact</h5>
-        <button class="btn-close" data-bs-dismiss="modal"></button>
+        <h5 class="modal-title">Contact Us</h5>
+        <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body">
         <form id="contactForm">
-          <input class="form-control mb-3" type="email" id="email" placeholder="Email">
-          <textarea class="form-control mb-3" id="message" placeholder="Message"></textarea>
-          <button class="btn btn-primary w-100">Submit</button>
+          <input class="form-control mb-3 form-control-dark" type="email" id="email" placeholder="Email" required>
+          <textarea class="form-control mb-3 form-control-dark" id="message" placeholder="Message" rows="4" required></textarea>
+          <button class="btn btn-warning w-100 fw-bold">Submit</button>
         </form>
       </div>
     </div>
